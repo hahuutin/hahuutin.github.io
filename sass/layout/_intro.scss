@@ -1,0 +1,44 @@
+// |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// |
+// | Intro `Comming soon`
+// |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+html,
+body,
+.image-full {
+    height: 100%;
+}
+
+.image-full {
+    opacity: 0.1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url(#{$image-url}/background-image.jpg) no-repeat;
+    -webkit-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+.welcome {
+    width: 600px;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    border: 2px solid #FFF;
+    padding: 40px;
+    color: #FFF;
+    font-size: 55px;
+    line-height: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

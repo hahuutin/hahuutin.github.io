@@ -1,0 +1,50 @@
+// |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// |
+// | Helper Classes
+// |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Show & Hide
+.show { display: block !important; }
+.hide { display: none !important; }
+.visible { visibility: visible !important; }
+.invisible { visibility: hidden !important; }
+
+// Inline & Block
+.block { display: block !important; }
+.inline { display: inline !important; }
+.inline-block { display: inline-block !important; }
+
+// Text
+.text-normal { font-weight: 400 !important; }
+.text-bold { font-weight: 700 !important; }
+.text-italic { font-style: italic !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.text-center { text-align: center !important; }
+
+// Position
+.pos-relative { position: relative !important; }
+.pos-absolute { position: absolute !important; }
+.pos-fixed { position: fixed !important; }
+.pos-static { position: static !important; }
+
+// Vertical align
+.ver-ali-top { vertical-align: top !important; }
+.ver-ali-bottom { vertical-align: bottom !important; }
+.ver-ali-middle { vertical-align: middle !important; }
+
+// Margin & Padding
+@for $i from 0 through 10 {
+    $value: $i*5;
+    // margin
+    .mt#{$i*5} { margin-top: #{$value}px !important;}
+    .mr#{$i*5} { margin-right: #{$value}px !important;}
+    .mb#{$i*5} { margin-bottom: #{$value}px !important;}
+    .ml#{$i*5} { margin-left: #{$value}px !important;}
+
+    // padding
+    .pt#{$i*5} { padding-top: #{$value}px !important;}
+    .pr#{$i*5} { padding-right: #{$value}px !important;}
+    .pb#{$i*5} { padding-bottom: #{$value}px !important;}
+    .pl#{$i*5} { padding-left: #{$value}px !important;}
+}

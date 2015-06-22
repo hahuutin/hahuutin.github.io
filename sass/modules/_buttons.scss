@@ -1,0 +1,23 @@
+// |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// |
+// | Buttons
+// |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.button-primary {
+    // @include border-radius(0);
+    padding: 10px 29px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: $color-white;
+    background-color: $color-primary;
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-secondary;
+    }
+
+    .icon-arrow-right {
+        margin-left: 6px;
+    }
+}
