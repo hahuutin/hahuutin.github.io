@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,600');
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, strong, dl, dt, dd, ul, li, fieldset, form, label, legend {
   border: 0;
@@ -42,7 +42,7 @@ a:link, a:visited {
 }
 
 body {
-  font-family: Poppins, 'sans-serif';
+  font-family: Oswald, 'sans-serif';
   height: 100vh;
   display: flex;
   align-items: center;
