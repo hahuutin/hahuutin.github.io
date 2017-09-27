@@ -62,6 +62,13 @@ body {
   align-items: baseline;
 }
 
+a.name-twitter {
+  font-size: 16px;
+  color: #48AAE6;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
 .avatar {
   border-radius: 3px;
 }
