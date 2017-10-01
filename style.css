@@ -96,3 +96,16 @@ a.name-twitter {
   height: 30px;
   align-items: center;
 }
+
+.my-resume {
+  font-size: 20px;
+  line-height: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 15px;
+}
+
+.my-resume a.link {
+  color: #48AAE6;
+}
