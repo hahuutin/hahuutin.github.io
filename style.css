@@ -73,7 +73,7 @@ a.name-twitter {
   border-radius: 3px;
 }
 
-.checkout {
+.social-contact {
   font-size: 20px;
   line-height: 20px;
   display: flex;
@@ -82,17 +82,17 @@ a.name-twitter {
   margin-top: 15px;
 }
 
-.checkout .list {
+.social-contact .list {
   display: flex;
   align-items: center;
 }
 
-.checkout .list li {
+.social-contact .list li {
   margin-left: 15px;
   align-self: flex-start;
 }
 
-.checkout img {
+.social-contact img {
   height: 30px;
   align-items: center;
 }
@@ -108,4 +108,21 @@ a.name-twitter {
 
 .my-resume a.link {
   color: #48AAE6;
+}
+
+.button-hire-me {
+  display: block;
+  width: 200px;
+  height: 40px;
+  margin-top: 50px;
+  line-height: 40px;
+  border: 2px solid #FEDA00;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+  transition: background-color .3s ease;
+}
+.button-hire-me:hover {
+  background-color: #FEDA00;
 }
