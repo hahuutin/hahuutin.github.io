@@ -1,10 +1,11 @@
 // Random set of color + css variables
 window.onload = () => {
   const themes = [
-    ['#FF5733', '#fff'],
-    ['#C70039', '#fff'],
-    ['#900C3F', '#fff'],
-    ['#581845', '#fff'],
+    ['#FF8360', '#000'],
+    ['#3E442B', '#fff'],
+    ['#7DCE82', '#000'],
+    ['#3CDBD3', '#000'],
+    ['#00FFF5', '#000'],
   ];
   const index = Math.floor(Math.random() * themes.length);
   const theme = themes[index];
