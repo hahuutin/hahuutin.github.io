@@ -94,7 +94,7 @@ body {
   /*align-items: flex-end;*/
 }
 .avatar {
-  border-radius: 3px;
+  border-radius: 50%;
 }
 
 /* Tag MyName: Tin Ha; */
@@ -151,14 +151,14 @@ body {
   top: -1px;
   left: -5px;
   right: -5px;
-  bottom: -6px;
+  bottom: -3px;
   background-color: var(--main-color);
   transition: transform .3s ease, top .3s .1s ease, bottom .3s .1s ease;
 }
 .resume__link:hover:before {
   transform: skew(-20deg);
   top: -5px;
-  bottom: -10px;
+  bottom: -7px;
 }
 
 /* Button HIRE ME */
