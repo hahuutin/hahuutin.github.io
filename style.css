@@ -55,6 +55,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #fff;
+  background-color: #1C1F33;
 }
 
 .wrapper {
@@ -95,16 +97,17 @@ body {
 }
 .avatar {
   border-radius: 50%;
+  margin-top: -10px;
 }
 
 /* Tag MyName: Tin Ha; */
 .tag--name-wrap {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 /* Tag Position: Front End Developer; */
 .tag--position-wrap {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Social contact */
