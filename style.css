@@ -77,20 +77,20 @@ body {
   display: flex;
   align-items: center;
 }
-.tag-char {
+.tag__char {
   color: var(--tag-char-color);
   font-size: 36px;
   line-height: 40px;
 }
-.tag-name {
+.tag__name {
   color: var(--main-color);
 }
-.tag-attr {
+.tag__attr {
   color: var(--tag-attr-color);
 }
 
 /* Tag Avatar */
-.tag-avatar-wrap {
+.tag--avatar-wrap {
   /*align-items: flex-end;*/
 }
 .avatar {
@@ -98,12 +98,12 @@ body {
 }
 
 /* Tag MyName: Tin Ha; */
-.tag-name-wrap {
+.tag--name-wrap {
   margin-top: 20px;
 }
 
 /* Tag Position: Front End Developer; */
-.tag-position-wrap {
+.tag--position-wrap {
   margin-top: 20px;
 }
 
@@ -116,21 +116,21 @@ body {
   align-items: flex-end;
   margin-top: 40px;
 }
-.social-contact .list {
+.social-contact__list {
   display: flex;
   align-items: center;
 }
-.social-contact .list li {
+.social-contact__list li {
   margin-left: 15px;
   align-self: flex-start;
 }
-.social-contact img {
+.social-contact__list img {
   height: 30px;
   align-items: center;
 }
 
 /* My resume */
-.my-resume {
+.resume {
   font-size: 20px;
   line-height: 20px;
   display: flex;
@@ -138,13 +138,13 @@ body {
   align-items: flex-end;
   margin-top: 20px;
 }
-.my-resume a.link {
+.resume__link {
   position: relative;
   z-index: 1;
   color: var(--text-color);
   margin-right: 5px;
 }
-.my-resume a.link:before {
+.resume__link:before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -155,18 +155,18 @@ body {
   background-color: var(--main-color);
   transition: transform .3s ease, top .3s .1s ease, bottom .3s .1s ease;
 }
-.my-resume a.link:hover:before {
+.resume__link:hover:before {
   transform: skew(-20deg);
   top: -5px;
   bottom: -10px;
 }
 
 /* Button HIRE ME */
-.wrap-buton-hire-me {
+.hire-me {
   display: flex;
   justify-content: flex-end;
 }
-.button-hire-me {
+.hire-me__button {
   display: block;
   width: 200px;
   height: 40px;
@@ -179,7 +179,7 @@ body {
   font-size: 18px;
   transition: background-color .3s ease;
 }
-.button-hire-me:hover {
+.hire-me__button:hover {
   background-color: var(--main-color);
   color: var(--text-color);
 }
