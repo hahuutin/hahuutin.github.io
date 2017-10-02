@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,600');
 
+:root {
+  --main-color: red;
+}
+
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, strong, dl, dt, dd, ul, li, fieldset, form, label, legend {
   border: 0;
   font-family: inherit;
@@ -64,7 +68,7 @@ body {
 
 a.name-twitter {
   font-size: 16px;
-  color: #48AAE6;
+  color: var(--main-color);
   line-height: 20px;
   margin-left: 10px;
 }
@@ -107,7 +111,19 @@ a.name-twitter {
 }
 
 .my-resume a.link {
-  color: #48AAE6;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+.my-resume a.link:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  left: -5px;
+  right: -5px;
+  bottom: -6px;
+  background-color: var(--main-color);
 }
 
 .button-hire-me {
@@ -116,7 +132,7 @@ a.name-twitter {
   height: 40px;
   margin-top: 50px;
   line-height: 40px;
-  border: 2px solid #FEDA00;
+  border: 2px solid var(--main-color);
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -124,5 +140,5 @@ a.name-twitter {
   transition: background-color .3s ease;
 }
 .button-hire-me:hover {
-  background-color: #FEDA00;
+  background-color: var(--main-color);
 }
