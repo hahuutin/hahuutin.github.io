@@ -1,7 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,600');
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Ubuntu');
 
 :root {
-  --main-color: red;
+  --main-color: #FF5733;
+  --text-color: #fff;
+
+  --tag-char-color: #000;
+  --tag-attr-color: orange;
 }
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, strong, dl, dt, dd, ul, li, fieldset, form, label, legend {
@@ -46,7 +50,7 @@ a:link, a:visited {
 }
 
 body {
-  font-family: Oswald, 'sans-serif';
+  font-family: 'Ubuntu', 'sans-serif';
   height: 100vh;
   display: flex;
   align-items: center;
@@ -56,64 +60,89 @@ body {
 .wrapper {
   display: flex;
   flex-direction: column;
+  width: 800px;
+  max-width: 100%;
 }
 
 .title {
-  font-size: 50px;
-  line-height: 60px;
-  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  font-family: 'Crete Round', 'sans-serif';
+}
+
+/* Tag styles */
+.tag {
+  font-size: 26px;
+  line-height: 26px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
-
-a.name-twitter {
-  font-size: 16px;
+.tag-char {
+  color: var(--tag-char-color);
+  font-size: 36px;
+  line-height: 40px;
+}
+.tag-name {
   color: var(--main-color);
-  line-height: 20px;
-  margin-left: 10px;
+}
+.tag-attr {
+  color: var(--tag-attr-color);
 }
 
+/* Tag Avatar */
+.tag-avatar-wrap {
+  /*align-items: flex-end;*/
+}
 .avatar {
   border-radius: 3px;
 }
 
+/* Tag MyName: Tin Ha; */
+.tag-name-wrap {
+  margin-top: 20px;
+}
+
+/* Tag Position: Front End Developer; */
+.tag-position-wrap {
+  margin-top: 20px;
+}
+
+/* Social contact */
 .social-contact {
   font-size: 20px;
   line-height: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 15px;
+  margin-top: 40px;
 }
-
 .social-contact .list {
   display: flex;
   align-items: center;
 }
-
 .social-contact .list li {
   margin-left: 15px;
   align-self: flex-start;
 }
-
 .social-contact img {
   height: 30px;
   align-items: center;
 }
 
+/* My resume */
 .my-resume {
   font-size: 20px;
   line-height: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 15px;
+  margin-top: 20px;
 }
-
 .my-resume a.link {
   position: relative;
   z-index: 1;
-  color: #fff;
+  color: var(--text-color);
+  margin-right: 5px;
 }
 .my-resume a.link:before {
   content: '';
@@ -132,11 +161,16 @@ a.name-twitter {
   bottom: -10px;
 }
 
+/* Button HIRE ME */
+.wrap-buton-hire-me {
+  display: flex;
+  justify-content: flex-end;
+}
 .button-hire-me {
   display: block;
   width: 200px;
   height: 40px;
-  margin-top: 50px;
+  margin-top: 30px;
   line-height: 40px;
   border: 2px solid var(--main-color);
   text-transform: uppercase;
@@ -147,4 +181,5 @@ a.name-twitter {
 }
 .button-hire-me:hover {
   background-color: var(--main-color);
+  color: var(--text-color);
 }
