@@ -131,6 +131,21 @@ body {
   height: 30px;
   align-items: center;
 }
+.social-contact__twitter:hover {
+  cursor: url(assets/cursor-twitter.png), auto;
+}
+.social-contact__github:hover {
+  cursor: url(assets/cursor-github.png), auto;
+}
+.social-contact__codepen:hover {
+  cursor: url(assets/cursor-codepen.png), auto;
+}
+.social-contact__stackoverflow:hover {
+  cursor: url(assets/cursor-stackoverflow.png), auto;
+}
+.social-contact__linkedin:hover {
+  cursor: url(assets/cursor-linkedin.png), auto;
+}
 
 /* My resume */
 .resume {
