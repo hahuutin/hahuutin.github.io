@@ -35,7 +35,7 @@
           <span>&nbsp;&nbsp;</span>
           <span class="tag__attr">alt</span>
           <span>=</span>
-          <span>[my handsome face &#128540;]</span>
+          <span>"my handsome face &#128540;"</span>
           <span class="tag__char">&nbsp;/&gt;</span>
         </div>
 
@@ -45,61 +45,83 @@
           <span class="tag__name">FullName&nbsp;</span>
           <span class="tag__attr">value</span>
           <span>=</span>
-          <span class="title">[Ha Huu Tin]</span>
+          <span class="title">"Ha Huu Tin"</span>
           <span class="tag__char">&nbsp;/&gt;</span>
         </div>
 
-        <!-- ✂✂ PANE LEFT :: <Position /> Tag ✂✂ -->
-        <div class="tag tag--position-wrap">
-          <span class="tag__char">&lt;</span>
-          <span class="tag__name">Position&nbsp;</span>
-          <span class="tag__attr">value</span>
-          <span>=</span>
-          <span class="title">[Front End Developer]</span>
-          <span class="tag__char">&nbsp;/&gt;</span>
+        <!-- ✂✂ PANE LEFT :: <Bio /> Tag ✂✂ -->
+        <div class="tag tag--bio-wrap tag--break">
+          <div class="tag--break__item">
+            <span class="tag__char">&lt;</span>
+            <span class="tag__name">Bio&nbsp;</span>
+          </div>
+          <div class="tag--break__item tag--break__item--attr">
+            <span class="tag__attr">roles</span>
+            <span>=</span>
+            <span class="title">['Husband', 'Dad', 'Front End']</span>
+          </div>
+          <div class="tag--break__item tag--break__item--attr">
+            <span class="tag__attr">hobbies</span>
+            <span>=</span>
+            <span class="title">['Music', 'Food']</span>
+          </div>
+          <div class="tag--break__item">
+            <span class="tag__char">&nbsp;/&gt;</span>
+          </div>
         </div>
       </div>
 
       <!-- ✂✂ PANE RIGHT ✂✂ -->
       <div class="pane-right">
 
-        <!-- ✂✂ PANE RIGHT :: SOCIAL CONTACT ✂✂ -->
-        <div class="social-contact">
-          <p>Contact me on:</p>
-          <ul class="social-contact__list">
-            <li>
-              <a class="social-contact__twitter" target="_blank" href="https://twitter.com/hahuutin">
-                <img src="assets/twitter.svg" alt="twitter icon" />
-              </a>
-            </li>
-            <li>
-              <a class="social-contact__github" target="_blank" href="https://github.com/hahuutin">
-                <img src="assets/github.svg" alt="github icon" />
-              </a>
-            </li>
-            <li>
-              <a class="social-contact__codepen" target="_blank" href="https://codepen.io/tinhh/">
-                <img src="assets/codepen.svg" alt="codepen icon" />
-              </a>
-            </li>
-            <li>
-              <a class="social-contact__stackoverflow" target="_blank" href="https://stackoverflow.com/users/4485780/ha-huu-tin">
-                <img src="assets/stackoverflow.svg" alt="stackoverflow icon" />
-              </a>
-            </li>
-            <li>
-              <a class="social-contact__linkedin" target="_blank" href="https://www.linkedin.com/in/ha-huu-tin-11ba868b/">
-                <img src="assets/linkedin.svg" alt="linkedin icon" />
-              </a>
-            </li>
-          </ul>
+        <!-- ✂✂ PANE RIGHT :: CONTACT WITH ME VIA ✂✂ -->
+        <div class="connect-with-me-via">
+          <div class="css__line">
+            <span class="css__selector">#connect-with-me-via</span>
+            <span class="css__quote">&nbsp;{</span>
+          </div>
+          <div class="css__line css__line--rule">
+            <span class="css__property">social</span>
+            <span class="css__char">:&nbsp;</span>
+            <ul class="social-contact__list">
+              <li>
+                <a class="social-contact__twitter" target="_blank" href="https://twitter.com/hahuutin">
+                  <img src="assets/twitter.svg" alt="twitter icon" />
+                </a>
+              </li>
+              <li>
+                <a class="social-contact__github" target="_blank" href="https://github.com/hahuutin">
+                  <img src="assets/github.svg" alt="github icon" />
+                </a>
+              </li>
+              <li>
+                <a class="social-contact__codepen" target="_blank" href="https://codepen.io/tinhh/">
+                  <img src="assets/codepen.svg" alt="codepen icon" />
+                </a>
+              </li>
+              <li>
+                <a class="social-contact__stackoverflow" target="_blank" href="https://stackoverflow.com/users/4485780/ha-huu-tin">
+                  <img src="assets/stackoverflow.svg" alt="stackoverflow icon" />
+                </a>
+              </li>
+              <li>
+                <a class="social-contact__linkedin" target="_blank" href="https://www.linkedin.com/in/ha-huu-tin-11ba868b/">
+                  <img src="assets/linkedin.svg" alt="linkedin icon" />
+                </a>
+              </li>
+            </ul>
+            <span class="css__char css__char--end">;</span>
+          </div>
+          <div class="css__line css__line--rule">
+            <span class="css__property">resume</span>
+            <span class="css__char">:&nbsp;</span>
+            <a class="resume__link" target="_blank" href="assets/my-resume.pdf">link</a>
+            <span class="css__char css__char--end">;</span>
+          </div>
+          <div class="css__line">
+            <span class="css__quote">}</span>
+          </div>
         </div>
-
-        <!-- ✂✂ PANE RIGHT :: RESUME ✂✂ -->
-        <p class="resume">
-          Or check out &nbsp;
-          <a class="resume__link" target="_blank" href="assets/my-resume.pdf">my resume</a>
-        </p>
 
         <!-- ✂✂ PANE RIGHT :: HIRE ME :: I'm busy right now! ✂✂
         <div class="hire-me">
