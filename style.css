@@ -59,11 +59,16 @@ table {
   width: 100%;
 }
 
-a:link, a:visited, a:hover, a:focus {
+/*
+ * CSS Selector Level 4
+ * :-webkit-any only working on Chrome
+ * Need some effort to working well on Firefox (:-moz-any), Safari (:matches)
+ */
+a:-webkit-any(:link, :visited, :hover, :focus) {
   text-decoration: none;
 }
 
-a:link, a:visited {
+a:-webkit-any(:link, :visited) {
   color: #000;
 }
 
