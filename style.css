@@ -6,6 +6,12 @@
   --tag-attr-color: #D17B0F;
 
   --font-typo: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+
+  --cursor-twitter: url("assets/cursor-twitter.png");
+  --cursor-github: url("assets/cursor-github.png");
+  --cursor-codepen: url("assets/cursor-codepen.png");
+  --cursor-stackoverflow: url("assets/cursor-stackoverflow.png");
+  --cursor-linkedin: url("assets/cursor-linkedin.png");
 }
 
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, strong, dl, dt, dd, ul, li, fieldset, form, label, legend {
@@ -131,20 +137,20 @@ body {
   height: 30px;
   align-items: center;
 }
-.social-contact__twitter:hover {
-  cursor: url(assets/cursor-twitter.png), auto;
+.social-contact__twitter {
+  cursor: var(--cursor-twitter), auto;
 }
-.social-contact__github:hover {
-  cursor: url(assets/cursor-github.png), auto;
+.social-contact__github {
+  cursor: var(--cursor-github), auto;
 }
-.social-contact__codepen:hover {
-  cursor: url(assets/cursor-codepen.png), auto;
+.social-contact__codepen {
+  cursor: var(--cursor-codepen), auto;
 }
-.social-contact__stackoverflow:hover {
-  cursor: url(assets/cursor-stackoverflow.png), auto;
+.social-contact__stackoverflow {
+  cursor: var(--cursor-stackoverflow), auto;
 }
-.social-contact__linkedin:hover {
-  cursor: url(assets/cursor-linkedin.png), auto;
+.social-contact__linkedin {
+  cursor: var(--cursor-linkedin), auto;
 }
 
 /* My resume */
@@ -163,7 +169,7 @@ a.resume__link {
   margin-right: 5px;
 }
 a.resume__link:before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
   top: -1px;
