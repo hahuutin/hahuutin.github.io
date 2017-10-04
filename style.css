@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------------ *\
-|* If CSS Variables are supported...
+|* If CSS Variables (Custom Properties) are supported...
 \* ------------------------------------------------------------------------ */
 :root {
   --main-color: #FF5733;
@@ -15,11 +15,21 @@
   --cursor-codepen: url("assets/cursor-codepen.png");
   --cursor-stackoverflow: url("assets/cursor-stackoverflow.png");
   --cursor-linkedin: url("assets/cursor-linkedin.png");
+
+  --duration: 0.5;
+
+  @media (prefers-reduced-motion: reduce) {
+    --duration: 0;
+  }
 }
 
 /* ------------------------------------------------------------------------ *\
 |* Reset CSS
 \* ------------------------------------------------------------------------ */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, strong, dl, dt, dd, ul, li, fieldset, form, label, legend {
   border: 0;
   font-family: inherit;
@@ -52,6 +62,7 @@ table {
 a:link, a:visited, a:hover, a:focus {
   text-decoration: none;
 }
+
 a:link, a:visited {
   color: #000;
 }
@@ -114,14 +125,17 @@ body {
   display: flex;
   align-items: baseline;
 }
+
 .tag__char {
   color: var(--tag-char-color);
   font-size: 36px;
   line-height: 40px;
 }
+
 .tag__name {
   color: var(--main-color);
 }
+
 .tag__attr {
   color: var(--tag-attr-color);
 }
@@ -130,6 +144,7 @@ body {
 .tag--avatar-wrap {
   align-items: center;
 }
+
 .avatar {
   border-radius: 50%;
   margin-top: -10px;
@@ -155,30 +170,38 @@ body {
   align-items: flex-end;
   margin-top: 40px;
 }
+
 .social-contact__list {
   display: flex;
   align-items: center;
 }
+
 .social-contact__list li {
   margin-left: 15px;
   align-self: flex-start;
 }
+
 .social-contact__list img {
   height: 30px;
   align-items: center;
 }
+
 .social-contact__twitter {
   cursor: var(--cursor-twitter), auto;
 }
+
 .social-contact__github {
   cursor: var(--cursor-github), auto;
 }
+
 .social-contact__codepen {
   cursor: var(--cursor-codepen), auto;
 }
+
 .social-contact__stackoverflow {
   cursor: var(--cursor-stackoverflow), auto;
 }
+
 .social-contact__linkedin {
   cursor: var(--cursor-linkedin), auto;
 }
@@ -192,12 +215,14 @@ body {
   align-items: flex-end;
   margin-top: 20px;
 }
+
 a.resume__link {
   position: relative;
   z-index: 1;
   color: var(--text-color);
   margin-right: 5px;
 }
+
 a.resume__link:before {
   content: "";
   position: absolute;
@@ -207,8 +232,11 @@ a.resume__link:before {
   right: -5px;
   bottom: -3px;
   background-color: var(--main-color);
-  transition: transform .3s ease, top .3s .1s ease, bottom .3s .1s ease;
+  transition: transform calc(var(--duration) * 1s) ease,
+              top calc(var(--duration) * 1s) calc(var(--duration) * 0.1s) ease,
+              bottom calc(var(--duration) * 1s) calc(var(--duration) * 0.1s) ease;
 }
+
 a.resume__link:hover:before {
   transform: skew(-20deg);
   top: -5px;
@@ -220,6 +248,7 @@ a.resume__link:hover:before {
   display: flex;
   justify-content: flex-end;
 }
+
 .hire-me__button {
   display: block;
   width: 200px;
@@ -233,6 +262,7 @@ a.resume__link:hover:before {
   font-size: 18px;
   transition: background-color .3s ease;
 }
+
 .hire-me__button:hover {
   background-color: var(--main-color);
   color: var(--text-color);
@@ -244,6 +274,7 @@ a.resume__link:hover:before {
   justify-content: center;
   padding-bottom: 15px;
 }
+
 a.footer__link {
   color: var(--main-color);
 }
