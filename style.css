@@ -1,3 +1,6 @@
+/* ------------------------------------------------------------------------ *\
+|* If CSS Variables are supported...
+\* ------------------------------------------------------------------------ */
 :root {
   --main-color: #FF5733;
   --text-color: #fff;
@@ -14,6 +17,9 @@
   --cursor-linkedin: url("assets/cursor-linkedin.png");
 }
 
+/* ------------------------------------------------------------------------ *\
+|* Reset CSS
+\* ------------------------------------------------------------------------ */
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, strong, dl, dt, dd, ul, li, fieldset, form, label, legend {
   border: 0;
   font-family: inherit;
@@ -55,6 +61,9 @@ a:link, a:visited {
   color: #fff;
 }
 
+/* ------------------------------------------------------------------------ *\
+|* Main stylistic
+\* ------------------------------------------------------------------------ */
 body {
   font-family: var(--font-typo);
   height: 100vh;
@@ -229,6 +238,7 @@ a.resume__link:hover:before {
   color: var(--text-color);
 }
 
+/* Footer */
 .footer {
   display: flex;
   justify-content: center;
