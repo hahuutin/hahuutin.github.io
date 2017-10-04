@@ -104,6 +104,7 @@ body {
 .avatar {
   border-radius: 50%;
   margin-top: -10px;
+  box-shadow: 0 0 0 3px var(--main-color);
 }
 
 /* Tag MyName: Tin Ha; */
