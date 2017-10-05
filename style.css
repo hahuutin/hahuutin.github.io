@@ -147,6 +147,7 @@ body {
 
 .tag--break {
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .tag--break__item {
@@ -156,7 +157,7 @@ body {
 }
 
 .tag--break__item--attr {
-  padding-left: 40px;
+  padding-right: 45px;
 }
 
 /* Tag Avatar */
