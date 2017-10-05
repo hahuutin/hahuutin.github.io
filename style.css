@@ -331,3 +331,16 @@ a.resume__link:hover:before {
 a.footer__link {
   color: var(--main-color);
 }
+
+/* RESPONSIVE */
+@media (max-width: 1400px) {
+  .tag,
+  .connect-with-me-via {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .title {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
