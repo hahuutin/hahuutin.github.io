@@ -30,6 +30,9 @@
   @media (prefers-reduced-motion: reduce) {
     --duration: 0;
   }
+
+  --timing-easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  --timing-easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
 }
 
 /* ------------------------------------------------------------------------ *\
@@ -117,7 +120,7 @@ body {
   display: flex;
   transform: translateX(200px);
   opacity: 0;
-  transition: all .5s .3s ease-out;
+  transition: all .5s .3s var(--timing-easeOutQuad);
 }
 
 .pane-right {
@@ -135,14 +138,14 @@ body {
   align-items: flex-start;
   transform: translateX(-200px);
   opacity: 0;
-  transition: all .6s .3s ease-out;
+  transition: all .5s .4s var(--timing-easeOutQuad);
 }
 
 .divider {
   width: 2px;
-  border-left: 2px dashed #fff;
+  border-left: 2px solid #fff;
   height: 0;
-  transition: height .5s ease-in-out;
+  transition: height .5s var(--timing-easeOutQuint);
 }
 
 .animated .pane-left__inner {
@@ -172,15 +175,15 @@ body {
 .wrap-avatar {
   width: 20px;
 }
+
 .avatar {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 54% 75%, 29% 99%, 29% 75%, 0% 75%);
+  clip-path: polygon(5% 10%, 95% 2%, 100% 67%, 40% 82%, 20% 100%, 16% 76%, 2% 73%);
   vertical-align: bottom;
   position: relative;
   left: -25px;
   bottom: 5px;
 }
 
-/* Tag styles */
 .tag {
   display: flex;
   align-items: baseline;
@@ -215,24 +218,20 @@ body {
   padding-right: 45px;
 }
 
-/* Tag MyName: Tin Ha; */
 .tag--name-wrap {
   margin-top: 25px;
 }
 
-/* Tag Position: Front End Developer; */
 .tag--bio-wrap {
   margin-top: 15px;
 }
 
-/* Social contact */
 .connect-with-me-via {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
 }
 
-/* Style CSS code */
 .css__line {
   display: flex;
   align-items: center;
@@ -264,7 +263,6 @@ body {
   padding-left: 5px;
 }
 
-/* List icon social */
 .social-contact__list {
   display: flex;
   align-items: center;
@@ -305,7 +303,6 @@ body {
   cursor: var(--cursor-linkedin), auto;
 }
 
-/* My resume */
 .resume {
   font-size: 20px;
   line-height: 20px;
@@ -343,7 +340,6 @@ a.resume__link:hover:before {
   bottom: -7px;
 }
 
-/* Button HIRE ME */
 .hire-me {
   display: flex;
   justify-content: flex-end;
@@ -368,7 +364,6 @@ a.resume__link:hover:before {
   color: var(--text-color);
 }
 
-/* Footer */
 .footer {
   display: flex;
   justify-content: center;
@@ -379,7 +374,9 @@ a.footer__link {
   color: var(--main-color);
 }
 
-/* RESPONSIVE */
+/* ------------------------------------------------------------------------ *\
+|* Responsive
+\* ------------------------------------------------------------------------ */
 @media screen and (max-width: 1400px) {
   :root {
     --font-size-code: 20px;
