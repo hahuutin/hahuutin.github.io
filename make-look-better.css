@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 /* ------------------------------------------------------------------------ *\
 |* If CSS Variables (Custom Properties) are supported...
 \* ------------------------------------------------------------------------ */
@@ -7,11 +8,8 @@
   --text-color: #fff;
 
   /* Fonts */
-  --font-type-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-default-mac: Monaco;
-  --font-default-win: Consolas;
-  --font-default-linux: "Ubuntu Mono";
-  --font-typo-code: var(--font-default-mac), var(--font-default-win), var(--font-default-linux), var(--font-type-base);
+  --font-typo-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-typo-code: Inconsolata, var(--font-typo-base);
   --font-size-code: 22px;
 
   /* Code HTML */
@@ -89,7 +87,7 @@ a:-webkit-any(:link, :visited, :hover, :focus) {
 |* Main stylistic
 \* ------------------------------------------------------------------------ */
 body {
-  font-family: var(--font-type-base);
+  font-family: var(--font-typo-base);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -100,34 +98,35 @@ body {
 .wrapper {
   display: flex;
   align-items: flex-start;
+  flex: 1;
+  flex-direction: row-reverse;
   width: 100%;
   padding-top: 100px;
-  flex: 1;
 }
 
 .pane-left {
   display: flex;
   flex: 1;
-  justify-content: flex-end;
-  padding-right: 20px;
+  justify-content: flex-start;
+  padding-left: 20px;
   overflow: hidden;
 }
 
 .pane-left__inner {
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  display: flex;
+  align-items: flex-start;
   transform: translateX(200px);
   opacity: 0;
-  transition: all .5s .3s var(--timing-easeOutQuad);
+  transition: all .3s .3s var(--timing-easeOutQuad);
 }
 
 .pane-right {
   display: flex;
   flex: 1;
-  justify-content: flex-start;
-  padding-left: 50px;
+  justify-content: flex-end;
+  padding-right: 50px;
   padding-top: 250px;
   overflow: hidden;
 }
@@ -138,13 +137,15 @@ body {
   align-items: flex-start;
   transform: translateX(-200px);
   opacity: 0;
-  transition: all .5s .4s var(--timing-easeOutQuad);
+  transition: all .3s .4s var(--timing-easeOutQuad);
 }
 
 .divider {
   width: 2px;
   border-left: 2px solid #fff;
   height: 0;
+  position: relative;
+  left: -20px;
   transition: height .5s var(--timing-easeOutQuint);
 }
 
@@ -172,21 +173,13 @@ body {
   font-family: var(--font-typo-code);
 }
 
-.wrap-avatar {
-  width: 20px;
-}
-
 .avatar {
-  clip-path: polygon(5% 10%, 95% 2%, 100% 67%, 40% 82%, 20% 100%, 16% 76%, 2% 73%);
-  vertical-align: bottom;
-  position: relative;
-  left: -25px;
-  bottom: 5px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 .tag {
   display: flex;
-  align-items: baseline;
+  align-items: center;
 }
 
 .tag__char {
@@ -205,21 +198,21 @@ body {
 
 .tag--break {
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .tag--break__item {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   padding: 5px 0;
 }
 
 .tag--break__item--attr {
-  padding-right: 45px;
+  padding-left: 45px;
 }
 
 .tag--name-wrap {
-  margin-top: 25px;
+  margin-top: 10px;
 }
 
 .tag--bio-wrap {
