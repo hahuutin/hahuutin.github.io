@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 /* ------------------------------------------------------------------------ *\
 |* If CSS Variables (Custom Properties) are supported...
 \* ------------------------------------------------------------------------ */
@@ -12,7 +13,7 @@
   --font-typo-code: Inconsolata, var(--font-typo-base);
   --font-size-code: 22px;
 
-  /* Code HTML */
+  /* Code HTML, CSS emulate */
   --tag-char-color: #C84630;
   --tag-attr-color: #D17B0F;
 
@@ -108,8 +109,9 @@ body {
   display: flex;
   flex: 1;
   justify-content: flex-start;
-  padding-left: 20px;
   overflow: hidden;
+  position: relative;
+  left: -10px;
 }
 
 .pane-left__inner {
@@ -140,15 +142,6 @@ body {
   transition: all .3s .4s var(--timing-easeOutQuad);
 }
 
-.divider {
-  width: 2px;
-  border-left: 2px solid #fff;
-  height: 0;
-  position: relative;
-  left: -20px;
-  transition: height .5s var(--timing-easeOutQuint);
-}
-
 .animated .pane-left__inner {
   transform: translateX(0);
   opacity: 1;
@@ -159,9 +152,35 @@ body {
   opacity: 1;
 }
 
-.animated .divider {
-  height: 440px;
+/* --- Animate SVG --- */
+.divider {
+  width: 2px;
+  position: relative;
+  left: -20px;
 }
+
+.divider svg {
+  position: absolute;
+  top: 0;
+  left: -173px;
+}
+
+.animated .path-animate {
+  stroke: var(--main-color);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1s var(--timing-easeOutQuad) forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* --- / End Animate SVG --- */
 
 .emphasis {
   font-weight: 700;
