@@ -2,22 +2,31 @@
 |* If CSS Variables (Custom Properties) are supported...
 \* ------------------------------------------------------------------------ */
 :root {
+  /* Colors */
   --main-color: #FF5733;
   --text-color: #fff;
 
+  /* Fonts */
+  --font-type-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-default-mac: Monaco;
+  --font-default-win: Consolas;
+  --font-default-linux: "Ubuntu Mono";
+  --font-typo-code: var(--font-default-mac), var(--font-default-win), var(--font-default-linux), var(--font-type-base);
+  --font-size-code: 22px;
+
+  /* Code HTML */
   --tag-char-color: #C84630;
   --tag-attr-color: #D17B0F;
 
-  --font-typo: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
+  /* Cursors */
   --cursor-twitter: url("assets/cursor-twitter.png");
   --cursor-github: url("assets/cursor-github.png");
   --cursor-codepen: url("assets/cursor-codepen.png");
   --cursor-stackoverflow: url("assets/cursor-stackoverflow.png");
   --cursor-linkedin: url("assets/cursor-linkedin.png");
 
+  /* Animations */
   --duration: 0.5;
-
   @media (prefers-reduced-motion: reduce) {
     --duration: 0;
   }
@@ -39,10 +48,6 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, im
   padding: 0;
 }
 
-:focus {
-  outline: 0 !important;
-}
-
 ol,
 ul {
   list-style: none;
@@ -59,6 +64,15 @@ table {
   width: 100%;
 }
 
+:focus {
+  outline: 0 !important;
+}
+
+::selection {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
 /*
  * CSS Selector Level 4
  * :-webkit-any only working on Chrome
@@ -68,20 +82,11 @@ a:-webkit-any(:link, :visited, :hover, :focus) {
   text-decoration: none;
 }
 
-a:-webkit-any(:link, :visited) {
-  color: #000;
-}
-
-::selection {
-  background-color: #000;
-  color: #fff;
-}
-
 /* ------------------------------------------------------------------------ *\
 |* Main stylistic
 \* ------------------------------------------------------------------------ */
 body {
-  font-family: var(--font-typo);
+  font-family: var(--font-type-base);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -100,41 +105,91 @@ body {
 .pane-left {
   display: flex;
   flex: 1;
+  justify-content: flex-end;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+.pane-left__inner {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
-  padding-right: 50px;
+  display: flex;
+  transform: translateX(200px);
+  opacity: 0;
+  transition: all .5s .3s ease-out;
 }
 
 .pane-right {
   display: flex;
   flex: 1;
+  justify-content: flex-start;
+  padding-left: 50px;
+  padding-top: 250px;
+  overflow: hidden;
+}
+
+.pane-right__inner {
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  padding-left: 50px;
-  padding-top: 250px;
-  border-left: 2px dashed #fff;
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: all .6s .3s ease-out;
 }
 
-.title {
-  font-size: 30px;
-  line-height: 30px;
+.divider {
+  width: 2px;
+  border-left: 2px dashed #fff;
+  height: 0;
+  transition: height .5s ease-in-out;
+}
+
+.animated .pane-left__inner {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animated .pane-right__inner {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animated .divider {
+  height: 440px;
+}
+
+.emphasis {
   font-weight: 700;
+}
+
+.code {
+  font-size: var(--font-size-code);
+  line-height: var(--font-size-code);
+  font-family: var(--font-typo-code);
+}
+
+.wrap-avatar {
+  width: 20px;
+}
+.avatar {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 54% 75%, 29% 99%, 29% 75%, 0% 75%);
+  vertical-align: bottom;
+  position: relative;
+  left: -25px;
+  bottom: 5px;
 }
 
 /* Tag styles */
 .tag {
-  font-size: 26px;
-  line-height: 26px;
   display: flex;
   align-items: baseline;
 }
 
 .tag__char {
   color: var(--tag-char-color);
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 .tag__name {
@@ -160,20 +215,9 @@ body {
   padding-right: 45px;
 }
 
-/* Tag Avatar */
-.tag--avatar-wrap {
-  align-items: center;
-}
-
-.avatar {
-  border-radius: 50%;
-  margin-top: -10px;
-  box-shadow: 0 0 0 3px var(--main-color);
-}
-
 /* Tag MyName: Tin Ha; */
 .tag--name-wrap {
-  margin-top: 5px;
+  margin-top: 25px;
 }
 
 /* Tag Position: Front End Developer; */
@@ -183,8 +227,6 @@ body {
 
 /* Social contact */
 .connect-with-me-via {
-  font-size: 26px;
-  line-height: 26px;
   display: flex;
   flex-direction: column;
   margin-top: 40px;
@@ -338,14 +380,8 @@ a.footer__link {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1400px) {
-  .tag,
-  .connect-with-me-via {
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .title {
-    font-size: 26px;
-    line-height: 26px;
+@media screen and (max-width: 1400px) {
+  :root {
+    --font-size-code: 20px;
   }
 }

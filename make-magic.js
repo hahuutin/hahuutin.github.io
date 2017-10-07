@@ -1,5 +1,5 @@
-// Random set of color + css variables
 window.onload = () => {
+  // Random set of color + css variables
   const themes = [
     ['#FF8360', '#000'],
     ['#7DCE82', '#000'],
@@ -10,4 +10,7 @@ window.onload = () => {
   const theme = themes[index];
   document.body.style.setProperty('--main-color', theme[0]);
   document.body.style.setProperty('--text-color', theme[1]);
+
+  // Animated element when enter the page
+  document.body.classList.add('animated');
 }
