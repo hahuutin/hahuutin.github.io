@@ -1,3 +1,6 @@
+console.log("%c😁Hello World...!!! %cYou're curious about my site, right? Feel free to explore it! I hope you find something useful👏", "color: #fff; font-size: 30px; background: red", "color: #fff; font-size: 18px; background: blue");
+
+
 window.onload = () => {
   // Random set of color + css variables
   const themes = [

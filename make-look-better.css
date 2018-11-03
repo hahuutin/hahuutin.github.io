@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Inconsolata');
-
 /* ------------------------------------------------------------------------ *\
 |* If CSS Variables (Custom Properties) are supported...
 \* ------------------------------------------------------------------------ */
@@ -10,8 +8,8 @@
 
   /* Fonts */
   --font-typo-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-typo-code: Inconsolata, var(--font-typo-base);
-  --font-size-code: 22px;
+  --font-typo-code: 'VT323', monospace;
+  --font-size-code: 26px;
 
   /* Code HTML, CSS emulate */
   --tag-char-color: #C84630;
@@ -93,31 +91,28 @@ body {
   display: flex;
   flex-direction: column;
   color: #fff;
-  background-color: #1C1F33;
+  background-color: #0F222B;
+  cursor: url('assets/cursor_default.svg') 0 0, default;
 }
 
 .wrapper {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
   flex: 1;
-  flex-direction: row-reverse;
   width: 100%;
   padding-top: 100px;
 }
 
 .pane-left {
   display: flex;
-  flex: 1;
-  justify-content: flex-start;
   overflow: hidden;
-  position: relative;
-  left: -10px;
+  padding: 30px;
+  border: 1px solid #69ca62;
 }
 
 .pane-left__inner {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
   transform: translateX(200px);
   opacity: 0;
@@ -126,11 +121,11 @@ body {
 
 .pane-right {
   display: flex;
-  flex: 1;
-  justify-content: flex-end;
-  padding-right: 50px;
-  padding-top: 250px;
+  align-items: flex-start;
   overflow: hidden;
+  padding: 30px;
+  border: 1px solid #69ca62;
+  margin-top: -1px;
 }
 
 .pane-right__inner {
@@ -152,36 +147,6 @@ body {
   opacity: 1;
 }
 
-/* --- Animate SVG --- */
-.divider {
-  width: 2px;
-  position: relative;
-  left: -20px;
-}
-
-.divider svg {
-  position: absolute;
-  top: 0;
-  left: -173px;
-}
-
-.animated .path-animate {
-  stroke: var(--main-color);
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 1s var(--timing-easeOutQuad) forwards;
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-/* --- / End Animate SVG --- */
-
 .emphasis {
   font-weight: 700;
 }
@@ -193,7 +158,7 @@ body {
 }
 
 .avatar {
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  border-radius: 34% 66% 24% 76% / 43% 19% 81% 57%;
 }
 
 .tag {
@@ -241,7 +206,6 @@ body {
 .connect-with-me-via {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
 }
 
 .css__line {
@@ -370,13 +334,4 @@ a.resume__link:hover {
 
 a.footer__link {
   color: var(--main-color);
-}
-
-/* ------------------------------------------------------------------------ *\
-|* Responsive
-\* ------------------------------------------------------------------------ */
-@media screen and (max-width: 1400px) {
-  :root {
-    --font-size-code: 20px;
-  }
 }
