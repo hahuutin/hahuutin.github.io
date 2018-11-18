@@ -30,6 +30,7 @@
 
   --timing-easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
   --timing-easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  --timing-easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
 /* ------------------------------------------------------------------------ *\
@@ -294,12 +295,23 @@ a.resume__link {
   margin-left: 5px;
   line-height: 20px;
   color: var(--text-color);
-  background-image: linear-gradient(180deg, transparent 70%, #C84630 0);
-  transition: all .3s ease;
+
 }
 
-a.resume__link:hover {
-  background-image: linear-gradient(180deg, transparent 0, #C84630 0);
+a.resume__link:before {
+  content: "";
+  height: 30%;
+  width: 100%;
+  background-color: #C84630;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .3s var(--timing-easeOutBack);
+}
+
+a.resume__link:hover:before {
+  height: 100%;
 }
 
 .hire-me {
