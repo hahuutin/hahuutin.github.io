@@ -20,7 +20,7 @@ document.body.classList.add('animated');
 
 // Styled Console Log
 console.log(
-  "%c✌ Hello World",
+  "%c🙌Hello World",
   `color: #fff; font-size: 30px; background-image: linear-gradient(to right, ${themes[index]}, ${themes[index_2]});`
 );
 console.log(
