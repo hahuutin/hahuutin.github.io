@@ -86,6 +86,20 @@ a:-webkit-any(:link, :visited, :hover, :focus) {
 /* ------------------------------------------------------------------------ *\
 |* Main stylistic
 \* ------------------------------------------------------------------------ */
+@keyframes morph {
+  0% {border-radius: 50% 100% 100% 100% / 50% 50% 50% 50%;}
+  10% {border-radius: 13% 13% 13% 13% / 13% 13% 13% 13%;}
+  20% {border-radius: 100% 100% 100% 100% / 50% 50% 50% 50%;}
+  30% {border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;}
+  40% {border-radius: 50% 50% 50% 13% / 50% 50% 13% 50%;}
+  50% {border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;}
+  60% {border-radius: 50% 50% 50% 100% / 50% 50% 50% 50%;}
+  70% {border-radius: 50% 50% 100% 100% / 50% 50% 50% 50%;}
+  80% {border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;}
+  90% {border-radius: 50% 13% 50% 0% / 13% 13% 13% 0%;}
+  100% {border-radius: 50% 13% 50% 13% / 13% 50% 13% 50%;}
+}
+
 body {
   font-family: var(--font-typo-base);
   height: 100vh;
@@ -104,11 +118,18 @@ body {
   padding-top: 100px;
 }
 
+.wrapper__inner {
+  height: fit-content;
+  background-color: #122a35;
+  border-radius: 23% 0% 58% 33% / 20% 17% 57% 0%;
+  animation: morph 20s ease-in-out infinite both alternate;
+}
+
 .pane-left {
   display: flex;
   overflow: hidden;
   padding: 30px;
-  border: 1px solid #69ca62;
+  /* border: 1px solid #69ca62; */
 }
 
 .pane-left__inner {
@@ -125,7 +146,7 @@ body {
   align-items: flex-start;
   overflow: hidden;
   padding: 30px;
-  border: 1px solid #69ca62;
+  /* border: 1px solid #69ca62; */
   margin-top: -1px;
 }
 
