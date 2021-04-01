@@ -17,7 +17,8 @@
     <meta property="og:image" content="http://hahuutin.github.io/assets/avatar.jpg" />
     <meta property="og:description" content="See and enjoy my work!" />
     <!-- 😎😎 LOOKS BETTER 😎😎 -->
-    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="make-look-better.css">
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -33,61 +34,79 @@
   <body>
     <div class="wrapper">
       <div class="wrapper__inner">
-        <div class="pane-left code">
-          <div class="pane-left__inner">
-            <!-- <Avatar /> Tag -->
-            <div class="tag tag--avatar-wrap">
+        <div class="pane code">
+          <div class="file-name">index.html</div>
+          <!-- <Avatar /> Tag -->
+          <div class="tag tag--avatar-wrap">
+            <div class="tag__line js-line-html">
               <span class="tag__char">&lt;</span>
               <span class="tag__name code">Avatar&nbsp;</span>
+            </div>
+            <div class="tag__line tag__line--indent js-line-html">
               <span class="tag__attr">src</span>
-              <span>=</span>
+              <span>={</span>
               <img class="avatar" src="assets/avatar.jpg" width="70" height="70" alt="my handsome face" />
-              <span>&nbsp;</span>
+              <span>}</span>
+            </div>
+            <!-- <span>&nbsp;</span> -->
+            <div class="tag__line tag__line--indent js-line-html">
               <span class="tag__attr">alt</span>
               <span>=</span>
               <span>"my handsome face &#128540;"</span>
-              <span class="tag__char">&nbsp;/&gt;</span>
             </div>
-            <!-- <FullName /> Tag -->
-            <div class="tag tag--name-wrap">
+            <div class="tag__line js-line-html">
+              <span class="tag__char">/&gt;</span>
+            </div>
+          </div>
+
+          <!-- <FullName /> Tag -->
+          <div class="tag tag--name-wrap">
+            <div class="tag__line js-line-html">
               <span class="tag__char">&lt;</span>
               <span class="tag__name">FullName&nbsp;</span>
+            </div>
+            <div class="tag__line tag__line--indent js-line-html">
               <span class="tag__attr">value</span>
               <span>=</span>
-              <span>"Ha Huu Tin"</span>
-              <span class="tag__char">&nbsp;/&gt;</span>
+              <span>"Hà Hữu Tín"</span>
             </div>
-            <!-- <Bio /> Tag -->
-            <div class="tag tag--bio-wrap tag--break">
-              <div class="tag--break__item">
-                <span class="tag__char">&lt;</span>
-                <span class="tag__name">Bio</span>
-              </div>
-              <div class="tag--break__item tag--break__item--attr">
-                <span class="tag__attr">roles</span>
-                <span>=</span>
-                <span>['Husband', 'Dad', 'Front End']</span>
-              </div>
-              <div class="tag--break__item tag--break__item--attr">
-                <span class="tag__attr">hobbies</span>
-                <span>=</span>
-                <span>['Music', 'Film', 'Food', 'Beer', 'Game']</span>
-              </div>
-              <div class="tag--break__item">
-                <span class="tag__char">/&gt;</span>
-              </div>
+            <div class="tag__line js-line-html">
+              <span class="tag__char">/&gt;</span>
+            </div>
+          </div>
+
+          <!-- <Bio /> Tag -->
+          <div class="tag tag--bio-wrap tag--break">
+            <div class="tag__line js-line-html">
+              <span class="tag__char">&lt;</span>
+              <span class="tag__name">Bio</span>
+            </div>
+            <div class="tag__line tag__line--indent js-line-html">
+              <span class="tag__attr">roles</span>
+              <span>=</span>
+              <span>['Lovely Husband', 'Dad of 2 Sons', 'A Frontend Developer love CSS']</span>
+            </div>
+            <div class="tag__line tag__line--indent js-line-html">
+              <span class="tag__attr">hobbies</span>
+              <span>=</span>
+              <span>['Music', 'Film', 'Food', '(chill with) Beer']</span>
+            </div>
+            <div class="tag__line js-line-html">
+              <span class="tag__char">/&gt;</span>
             </div>
           </div>
         </div>
-        <div class="pane-right code">
-          <div class="pane-right__inner">
+
+        <div class="pane code">
+          <div class="file-name">style.css</div>
+          <div class="pane__inner">
             <!-- CONTACT WITH ME VIA -->
             <div class="connect-with-me-via">
-              <div class="css__line">
+              <div class="css__line js-line-css">
                 <span class="css__selector">.connect-with-me-via</span>
                 <span class="css__quote">&nbsp;{</span>
               </div>
-              <div class="css__line css__line--rule">
+              <div class="css__line css__line--rule js-line-css">
                 <span class="css__property">social</span>
                 <span class="css__char">:&nbsp;</span>
                 <ul class="social-contact__list">
@@ -125,7 +144,7 @@
                 <a class="resume__link" target="_blank" href="assets/my-resume.pdf">link</a>
                 <span class="css__char css__char--end">;</span>
               </div> -->
-              <div class="css__line">
+              <div class="css__line js-line-css">
                 <span class="css__quote">}</span>
               </div>
             </div>
