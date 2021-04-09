@@ -8,7 +8,7 @@
 
   /* Fonts */
   --font-typo-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-typo-code: 'IBM Plex Mono', monospace;
+  --font-typo-code: 'Josefin Sans', sans-serif;
   --font-size-code: 20px;
   --font-size-text: 18px;
 
@@ -88,17 +88,17 @@ a:-webkit-any(:link, :visited, :hover, :focus) {
 |* Main stylistic
 \* ------------------------------------------------------------------------ */
 @keyframes morph {
-  0% {border-radius: 50% 100% 100% 100% / 50% 50% 50% 50%;}
-  10% {border-radius: 13% 13% 13% 13% / 13% 13% 13% 13%;}
-  20% {border-radius: 100% 100% 100% 100% / 50% 50% 50% 50%;}
-  30% {border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;}
-  40% {border-radius: 50% 50% 50% 13% / 50% 50% 13% 50%;}
-  50% {border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;}
-  60% {border-radius: 50% 50% 50% 100% / 50% 50% 50% 50%;}
-  70% {border-radius: 50% 50% 100% 100% / 50% 50% 50% 50%;}
-  80% {border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;}
-  90% {border-radius: 50% 13% 50% 0% / 13% 13% 13% 0%;}
-  100% {border-radius: 50% 13% 50% 13% / 13% 50% 13% 50%;}
+  0% {border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;}
+  10% {border-radius: 30% 70% 70% 30% / 30% 57% 43% 70%;}
+  20% {border-radius: 54% 46% 70% 30% / 50% 57% 43% 50%;}
+  30% {border-radius: 38% 62% 50% 50% / 50% 33% 67% 50%;}
+  40% {border-radius: 38% 62% 50% 50% / 72% 74% 26% 28%;}
+  50% {border-radius: 78% 22% 29% 71% / 30% 74% 26% 70%;}
+  60% {border-radius: 63% 37% 80% 20% / 30% 47% 53% 70%;}
+  70% {border-radius: 31% 69% 36% 64% / 30% 17% 83% 70%;}
+  80% {border-radius: 15% 85% 14% 86% / 61% 14% 86% 39%;}
+  90% {border-radius: 42% 58% 40% 60% / 61% 44% 56% 39%;}
+  100% {border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;}
 }
 
 body {
@@ -123,8 +123,21 @@ body {
   margin-bottom: 10px;
   padding-bottom: 5px;
   border-bottom: 2px solid #ffeb3b;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
+}
+
+.file-name svg {
+  width: 20px;
+  margin-right: 6px;
+}
+
+.file-name .icon-html5 {
+  fill: #E34F26;
+}
+
+.file-name .icon-css3 {
+  fill: #1572B6;
 }
 
 .pane {
@@ -179,8 +192,9 @@ body {
 .avatar {
   width: 50px;
   height: auto;
-  border-radius: 34% 66% 24% 76% / 43% 19% 81% 57%;
+  margin: 0 5px;
   filter: grayscale(100%);
+  animation: morph 10s var(--timing-easeOutBack) infinite forwards;
 }
 
 .tag {
@@ -322,7 +336,7 @@ body {
   align-items: center;
 }
 
-.social-contact__twitter {
+.social-contact__twitter:hover {
   cursor: var(--cursor-twitter), auto;
 }
 
