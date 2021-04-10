@@ -461,6 +461,10 @@ a.footer__link {
     --indent: 30px;
   }
 
+  .pane {
+    padding-right: 0;
+  }
+
   .tag__line--indent {
     padding: 5px 0 5px var(--indent);
   }
@@ -484,7 +488,7 @@ a.footer__link {
   }
 
   .social-contact__list li:not(:first-child) {
-    margin-left: 5px;
+    margin-left: 10px;
   }
 
   .footer {
