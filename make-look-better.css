@@ -217,6 +217,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   position: relative;
+  white-space: nowrap;
 }
 
 .tag__line:before {
@@ -446,6 +447,10 @@ a.resume__link:hover:before {
   text-align: center;
 }
 
+.footer span {
+  margin: 0 3px;
+}
+
 a.footer__link {
   color: var(--main-color);
 }
@@ -476,5 +481,13 @@ a.footer__link {
 
   .tag__value-text {
     padding-left: var(--indent);
+  }
+
+  .social-contact__list li:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  .footer {
+    flex-direction: column;
   }
 }
