@@ -22,13 +22,17 @@
   --cursor-codepen: url("assets/cursor-codepen.png");
   --cursor-stackoverflow: url("assets/cursor-stackoverflow.png");
   --cursor-linkedin: url("assets/cursor-linkedin.png");
+  --cursor-viblo: url("assets/cursor-viblo.png");
+
+  /* Spacing*/
+  --indent: 40px;
+  --height-footer: 100px;
 
   /* Animations */
   --duration: 0.5;
   @media (prefers-reduced-motion: reduce) {
     --duration: 0;
   }
-
   --timing-easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
   --timing-easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
   --timing-easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
@@ -103,9 +107,6 @@ a:-webkit-any(:link, :visited, :hover, :focus) {
 
 body {
   font-family: var(--font-typo-base);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
   color: #fff;
   background-color: #0F222B;
   cursor: url('assets/cursor_default.svg') 0 0, default;
@@ -115,7 +116,7 @@ body {
   width: 100%;
 
   /* Sticky footer: https://css-tricks.com/couple-takes-sticky-footer/#there-is-calc-reduced-height-wrappers */
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - var(--height-footer));
 }
 
 .file-name {
@@ -185,7 +186,6 @@ body {
 
 .code {
   font-size: var(--font-size-code);
-  line-height: var(--font-size-code);
   font-family: var(--font-typo-code);
 }
 
@@ -214,6 +214,7 @@ body {
 
 .tag__line {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   position: relative;
 }
@@ -230,7 +231,7 @@ body {
 }
 
 .tag__line--indent {
-  padding: 10px 0 10px 40px;
+  padding: 10px 0 10px var(--indent);
 }
 
 .tag__char {
@@ -259,6 +260,24 @@ body {
 
 .tag--bio-wrap {
   margin-top: 15px;
+}
+
+.tag__value {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.tag__value-separate {
+  margin: 0 10px;
+}
+
+.tag__value-start {
+  margin-right: 7px;
+}
+
+.tag__value-end {
+  margin-left: 7px;
 }
 
 .connect-with-me-via {
@@ -296,7 +315,7 @@ body {
 
 
 .css__line--rule {
-  padding-left: 40px;
+  padding-left: var(--indent);
 }
 
 .css__selector {
@@ -336,7 +355,7 @@ body {
   align-items: center;
 }
 
-.social-contact__twitter:hover {
+.social-contact__twitter {
   cursor: var(--cursor-twitter), auto;
 }
 
@@ -354,6 +373,10 @@ body {
 
 .social-contact__linkedin {
   cursor: var(--cursor-linkedin), auto;
+}
+
+.social-contact__viblo {
+  cursor: var(--cursor-viblo), auto;
 }
 
 .resume {
@@ -415,12 +438,43 @@ a.resume__link:hover:before {
 }
 
 .footer {
-  height: 50px;
+  height: var(--height-footer);
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 a.footer__link {
   color: var(--main-color);
+}
+
+@media only screen and (max-width: 992px) {
+  :root {
+    --font-size-code: 16px;
+    --indent: 30px;
+  }
+
+  .tag__line--indent {
+    padding: 5px 0 5px var(--indent);
+  }
+
+  .tag__value {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .tag__value > * {
+    margin: 7px 0;
+  }
+
+  .tag__value-separate {
+    display: none;
+  }
+
+  .tag__value-text {
+    padding-left: var(--indent);
+  }
 }
