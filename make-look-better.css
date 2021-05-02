@@ -27,6 +27,7 @@
   /* Spacing*/
   --indent: 40px;
   --height-footer: 100px;
+  --line-height: 1.7;
 
   /* Animations */
   --duration: 0.5;
@@ -109,6 +110,7 @@ body {
   font-family: var(--font-typo-base);
   color: #fff;
   background-color: #0F222B;
+  line-height: var(--line-height);
   cursor: url('assets/cursor_default.svg') 0 0, default;
 }
 
@@ -232,13 +234,12 @@ body {
 }
 
 .tag__line--indent {
-  padding: 10px 0 10px var(--indent);
+  padding-left: var(--indent);
 }
 
 .tag__char {
   color: var(--tag-char-color);
   font-size: 30px;
-  line-height: 30px;
 
   /* Because using Ubuntu Mono font, I must reposition a little bit for vertical align middle */
   position: relative;
@@ -281,6 +282,18 @@ body {
   margin-left: 7px;
 }
 
+.tag__value--music {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🎵</text></svg>") 16 0,auto;
+}
+
+.tag__value--food {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍔</text></svg>") 16 0,auto;
+}
+
+.tag__value--beer {
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍺</text></svg>") 16 0,auto;
+}
+
 .connect-with-me-via {
   display: flex;
   flex-direction: column;
@@ -299,7 +312,6 @@ body {
 .css__line {
   display: flex;
   align-items: center;
-  line-height: 40px;
   position: relative;
 }
 
@@ -351,7 +363,6 @@ body {
 }
 
 .social-contact__list a {
-  line-height: 40px;
   display: flex;
   align-items: center;
 }
@@ -382,7 +393,6 @@ body {
 
 .resume {
   font-size: 20px;
-  line-height: 20px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -393,7 +403,6 @@ a.resume__link {
   position: relative;
   z-index: 1;
   margin-left: 5px;
-  line-height: 20px;
   color: var(--text-color);
 
 }
@@ -424,7 +433,6 @@ a.resume__link:hover:before {
   width: 200px;
   height: 40px;
   margin-top: 30px;
-  line-height: 40px;
   border: 2px solid var(--main-color);
   text-transform: uppercase;
   text-align: center;
@@ -459,6 +467,7 @@ a.footer__link {
   :root {
     --font-size-code: 16px;
     --indent: 30px;
+    --line-height: 1.3;
   }
 
   .pane {
@@ -466,7 +475,7 @@ a.footer__link {
   }
 
   .tag__line--indent {
-    padding: 5px 0 5px var(--indent);
+    padding-left: var(--indent);
   }
 
   .tag__value {
