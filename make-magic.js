@@ -28,14 +28,12 @@ console.log(
   `color: #fff; font-size: 18px; background-color: ${themes[index]}`
 );
 
-// Line of code counter (HTML)
-const counterHTML = document.getElementsByClassName('js-line-html');
-for (let i = 0; i < counterHTML.length; i++) {
-  counterHTML[i].setAttribute('data-line', i + 1);
+// Counter line of code (LOC)
+function counterLOC(el) {
+  const counterEl = document.getElementsByClassName(el);
+  for (let i = 0; i < counterEl.length; i++) {
+    counterEl[i].setAttribute('data-line', i + 1);
+  }
 }
-
-// Line of code counter (CSS)
-const counterCSS = document.getElementsByClassName('js-line-css');
-for (let i = 0; i < counterCSS.length; i++) {
-  counterCSS[i].setAttribute('data-line', i + 1);
-}
+counterLOC('js-line-html');
+counterLOC('js-line-css');
