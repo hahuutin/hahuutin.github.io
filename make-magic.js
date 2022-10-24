@@ -15,9 +15,6 @@ const index_2 = index === 0 ? index + 1 : index - 1;
 // Change CSS Variables
 document.body.style.setProperty('--main-color', themes[index]);
 
-// Animated element when enter the page
-document.body.classList.add('animated');
-
 // Styled Console Log
 console.log(
   "%c🙌Hello World",
@@ -37,3 +34,11 @@ function counterLOC(el) {
 }
 counterLOC('js-line-html');
 counterLOC('js-line-css');
+
+// Years old
+function yearsOld(birthday) {
+  var ageDifMs = Date.now() - birthday.getTime();
+  var ageDate = new Date(ageDifMs);
+  return Math.abs(ageDate.getUTCFullYear() - 1970);
+}
+document.getElementById('years-old').textContent = yearsOld(new Date(1992, 9, 3));

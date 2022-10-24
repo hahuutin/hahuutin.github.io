@@ -8,9 +8,10 @@
 
   /* Fonts */
   --font-typo-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-typo-code: 'Josefin Sans', sans-serif;
-  --font-size-code: 20px;
-  --font-size-text: 18px;
+  --font-typo-code: 'Overpass Mono', monospace;
+  --font-size-code: 18px;
+  --font-size-text: 16px;
+  --font-size-text-small: 14px;
 
   /* Code HTML, CSS emulate */
   --tag-char-color: #C84630;
@@ -26,7 +27,7 @@
 
   /* Spacing*/
   --indent: 40px;
-  --height-footer: 100px;
+  --height-footer: 50px;
   --line-height: 1.7;
 
   /* Animations */
@@ -109,25 +110,34 @@ a:-webkit-any(:link, :visited, :hover, :focus) {
 body {
   font-family: var(--font-typo-base);
   color: #fff;
-  background-color: #0F222B;
+  background-color: #20303e;
   line-height: var(--line-height);
   cursor: url('assets/cursor_default.svg') 0 0, default;
 }
 
 .wrapper {
-  width: 100%;
-
   /* Sticky footer: https://css-tricks.com/couple-takes-sticky-footer/#there-is-calc-reduced-height-wrappers */
-  min-height: calc(100vh - var(--height-footer));
+  height: calc(100vh - var(--height-footer));
+}
+
+.wrapper__inner {
+  display: flex;
+  height: 100%;
 }
 
 .file-name {
+  background: #0a181e;
+  border-bottom: 1px solid #283b4d;
+  display: flex;
+  align-items: flex-end;
+}
+
+.file-name__inner {
   display: inline-flex;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
   border-bottom: 2px solid #ffeb3b;
   font-size: 14px;
   font-weight: 700;
+  padding: 9px 15px;
 }
 
 .file-name svg {
@@ -144,58 +154,31 @@ body {
 }
 
 .pane {
-  padding: 10px 70px 10px 10px;
-  border-left: 2px solid #20303e;
-  margin-left: 50px;
-}
-
-.pane:last-child {
-  border-bottom: 2px solid #20303e;
-  padding-top: 50px;
-}
-
-.pane-right {
+  flex: 1;
   display: flex;
-  align-items: flex-start;
-  overflow: hidden;
-  padding: 30px;
-  /* border: 1px solid #69ca62; */
-  margin-top: -1px;
-}
-
-.pane-right__inner {
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  transform: translateX(-200px);
-  opacity: 0;
-  transition: all .3s .4s var(--timing-easeOutQuad);
+  border-left: 1px solid #375773;
 }
 
-.animated .pane-left__inner {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.animated .pane-right__inner {
-  transform: translateX(0);
-  opacity: 1;
-}
-
-.emphasis {
-  font-weight: 700;
+.pane__inner {
+  flex: 1;
+  margin-left: 50px;
+  padding: 0 10px 10px;
+  border-left: 1px solid #283b4d;
+  background-color: #0F222B;
 }
 
 .code {
   font-size: var(--font-size-code);
   font-family: var(--font-typo-code);
+  letter-spacing: -1px;
 }
 
 .avatar {
   width: 50px;
   height: auto;
   margin: 0 5px;
-  filter: grayscale(100%);
+  filter: grayscale(30%);
   animation: morph 10s var(--timing-easeOutBack) infinite forwards;
 }
 
@@ -240,10 +223,7 @@ body {
 .tag__char {
   color: var(--tag-char-color);
   font-size: 30px;
-
-  /* Because using Ubuntu Mono font, I must reposition a little bit for vertical align middle */
-  position: relative;
-  top: -2px;
+  margin: 0 2px;
 }
 
 .tag__name {
@@ -254,14 +234,6 @@ body {
 .css__property {
   color: var(--tag-attr-color);
   font-weight: 700;
-}
-
-.tag--name-wrap {
-  margin-top: 10px;
-}
-
-.tag--bio-wrap {
-  margin-top: 15px;
 }
 
 .tag__value {
@@ -282,22 +254,19 @@ body {
   margin-left: 7px;
 }
 
-.tag__value--music {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🎵</text></svg>") 16 0,auto;
-}
-
 .tag__value--food {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍔</text></svg>") 16 0,auto;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🥩</text></svg>") 16 0,auto;
 }
 
 .tag__value--beer {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🍺</text></svg>") 16 0,auto;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>🍺</text></svg>") 16 0,auto;
 }
 
 .connect-with-me-via {
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-top: 10px;
 }
 
 .connect-with-me-via:before {
@@ -448,11 +417,13 @@ a.resume__link:hover:before {
 
 .footer {
   height: var(--height-footer);
-  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: var(--font-size-text-small);
+  background-color: #20303e;
+  border-top: 1px solid #283b4d;
 }
 
 .footer span {
@@ -476,28 +447,6 @@ a.footer__link {
 
   .tag__line--indent {
     padding-left: var(--indent);
-  }
-
-  .tag__value {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .tag__value > * {
-    margin: 7px 0;
-  }
-
-  .tag__value-separate {
-    display: none;
-  }
-
-  .tag__value-text {
-    padding-left: var(--indent);
-  }
-
-  .social-contact__list li:not(:first-child) {
-    margin-left: 10px;
   }
 
   .footer {
