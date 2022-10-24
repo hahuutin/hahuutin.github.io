@@ -7,15 +7,15 @@
   --text-color: #fff;
 
   /* Fonts */
-  --font-typo-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  --font-typo-code: 'Overpass Mono', monospace;
+  --font-typo-base: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-typo-code: 'Source Code Pro', monospace;
   --font-size-code: 18px;
   --font-size-text: 16px;
   --font-size-text-small: 14px;
 
   /* Code HTML, CSS emulate */
-  --tag-char-color: #C84630;
-  --tag-attr-color: #D17B0F;
+  --tag-char-color: #c6e8f1;
+  --tag-attr-color: #dd998a;
 
   /* Cursors */
   --cursor-twitter: url("assets/cursor-twitter.png");
@@ -135,8 +135,8 @@ body {
 .file-name__inner {
   display: inline-flex;
   border-bottom: 2px solid #ffeb3b;
+  font-family: var(--font-typo-base);
   font-size: 14px;
-  font-weight: 700;
   padding: 9px 15px;
 }
 
@@ -171,7 +171,6 @@ body {
 .code {
   font-size: var(--font-size-code);
   font-family: var(--font-typo-code);
-  letter-spacing: -1px;
 }
 
 .avatar {
@@ -203,6 +202,10 @@ body {
   align-items: center;
   position: relative;
   white-space: nowrap;
+}
+
+.tag__line--margin-top {
+  margin-top: 18px;
 }
 
 .tag__line:before {
@@ -274,7 +277,7 @@ body {
   position: absolute;
   left: 5px;
   top: 40px;
-  bottom: 40px;
+  bottom: 30px;
   border-left: 2px dashed rgba(255, 255, 255, 0.1);
 }
 
@@ -306,6 +309,10 @@ body {
 
 .css__quote {
   color: var(--tag-char-color);
+}
+
+.css__quote--margin-left {
+  margin-left: 3px;
 }
 
 .css__char {
